@@ -9,16 +9,19 @@ redis:
 
 # Configuração RTC
 rtc:
-  port_range_start: 50000
-  port_range_end: 60000
+  port_range_start: 50050
+  port_range_end: 50100
   tcp_port: 7881
-  udp_port: 8000
+  udp_port: 7935
   use_external_ip: false
 
 # Chaves de API (obrigatório)
 keys:
-  API_KEY: "SUA_API_KEY"
-  API_SECRET: "SEU_API_SECRET"  # Troque por uma chave segura
+  - key: "API_DEV_123"
+    secret: "devkey_123_segura_456"  # Em produção, use uma chave mais segura
+
+# Configuração de Log
+log_level: debug
 
 # Configuração de Salas
 room:
@@ -30,9 +33,6 @@ room:
       mime: ["audio/opus", "video/VP8", "video/H264"]
     publish_allowed:
       mime: ["audio/opus", "video/VP8", "video/H264"]
-
-# Configuração de Log
-log_level: debug
 
 # Configuração de Mídia
 media:

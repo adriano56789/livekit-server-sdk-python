@@ -5,10 +5,10 @@ services:
     image: livekit/livekit-server:latest
     command: --config /etc/livekit/config.yaml
     ports:
-      - "7880:7880"     # API e WebSocket
-      - "7881:7881"     # TCP port (fallback)
-      - "7935:7935"     # RTC UDP
-      - "50000-60000:50000-60000/udp"  # UDP ports para WebRTC
+      - "7882:7880"     # API e WebSocket (porta 7880 interna, 7882 externa)
+      - "7883:7881"     # TCP port (fallback)
+      - "7936:7935/udp" # RTC UDP
+      - "50000-50100:50000-50100/udp"  # Faixa de portas UDP
     volumes:
       - ./livekit.yaml:/etc/livekit/config.yaml
     environment:
